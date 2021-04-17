@@ -1,1 +1,7 @@
 Flo's build of dwm.
+
+# Patches included in my build
+
+A list of all patches I included in my build of dwm. They are listed in apply order.
+
+- [shiftview](https://lists.suckless.org/dev/1104/7590.html)
