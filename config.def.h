@@ -112,8 +112,8 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioPlay,          spawn,     SHCMD("mpc toggle") },
 	{ 0, XF86XK_AudioPrev,          spawn,     SHCMD("mpc prev") },
 	{ 0, XF86XK_AudioNext,          spawn,     SHCMD("mpc next") },
-	{ 0, XF86XK_MonBrightnessUp,    spawn,     SHCMD("xbacklight -inc 15") },
-	{ 0, XF86XK_MonBrightnessDown,  spawn,     SHCMD("xbacklight -dec 15") },
+	{ 0, XF86XK_MonBrightnessUp,    spawn,     SHCMD("xbacklight -inc 10") },
+	{ 0, XF86XK_MonBrightnessDown,  spawn,     SHCMD("xbacklight -dec 10") },
 };
 
 /* button definitions */
