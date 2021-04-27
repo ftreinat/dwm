@@ -27,7 +27,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",      NULL,       NULL,       0,            1,           -1 },
+	{ "ncmpcpp",   NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "firefox",   NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "keepassxc", NULL,       NULL,       0,            1,           -1 },
 };
@@ -39,8 +39,8 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[T]",      tile },    /* first entry is default */
+	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -61,6 +61,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
 static const char *browserprivcmd[] = { "firefox", "--private-window", NULL };
+static const char *ncmpcppcmd[] = { "alacritty", "--class", "ncmpcpp, ncmpcpp", "-e", "ncmpcpp", NULL };
 
 #include <X11/XF86keysym.h>
 #include "./patches/shiftview.c"
@@ -95,6 +96,7 @@ static Key keys[] = {
     /* Program shortcuts */
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browserprivcmd } },
+	{ MODKEY, 		                XK_F6,     spawn,          {.v = ncmpcppcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
