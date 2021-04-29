@@ -29,7 +29,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "ncmpcpp",   NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "firefox",   NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "keepassxc", NULL,       NULL,       0,            1,           -1 },
+	{ "KeePassXC", NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
