@@ -5,7 +5,8 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10", "joypixels:size=10:antialias=true:autohint=true" ,"Font Awesome 5 Brands Regular:size=10:antialias=true:autohint=true" };
+static const char *fonts[]          = { "monospace:size=10", "JoyPixels:size=10:antialias=true:autohint=true"};
+//static const char *fonts[]          = { "monospace:size=10", "joypixels:size=10:antialias=true:autohint=true" ,"Font Awesome 5 Brands Regular:size=10:antialias=true:autohint=true" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -20,7 +21,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "4", "5", "6", "7", "8", "" };
+static const char *tags[] = { "", "", "", "4", "5", "6", "7", "8", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
