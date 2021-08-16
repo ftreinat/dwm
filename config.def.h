@@ -52,16 +52,10 @@ static const Layout layouts[] = {
 	{ "[T]",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
 	{ "[@]",      spiral },
-	{ "[\\]",     dwindle }, /* raus */
 	{ "H[]",      deck },
 	{ "TTT",      bstack },
-	{ "===",      bstackhoriz },/* raus */
 	{ "HHH",      grid },
-	{ "###",      nrowgrid },/* raus */
-	{ "---",      horizgrid },/* raus */
-	{ ":::",      gaplessgrid },/* raus */
 	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },/* raus */
 	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
