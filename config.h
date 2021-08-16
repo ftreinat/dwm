@@ -52,16 +52,16 @@ static const Layout layouts[] = {
 	{ "[T]",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
 	{ "[@]",      spiral },
-	{ "[\\]",     dwindle },
+	{ "[\\]",     dwindle }, /* raus */
 	{ "H[]",      deck },
 	{ "TTT",      bstack },
-	{ "===",      bstackhoriz },
+	{ "===",      bstackhoriz },/* raus */
 	{ "HHH",      grid },
-	{ "###",      nrowgrid },
-	{ "---",      horizgrid },
-	{ ":::",      gaplessgrid },
+	{ "###",      nrowgrid },/* raus */
+	{ "---",      horizgrid },/* raus */
+	{ ":::",      gaplessgrid },/* raus */
 	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
+	{ ">M>",      centeredfloatingmaster },/* raus */
 	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
@@ -108,6 +108,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_p,      setlayout,      {0} },
+	{ MODKEY|ControlMask,    		XK_comma,  cyclelayout,    {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
+	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
