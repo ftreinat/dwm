@@ -50,13 +50,13 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[T]",      tile },    /* first entry is default */
+	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "[@]",      spiral },
 	{ "H[]",      deck },
+	{ "[@]",      spiral },
 	{ "TTT",      bstack },
 	{ "HHH",      grid },
 	{ "|M|",      centeredmaster },
-	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
 
@@ -133,15 +133,15 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0, XF86XK_AudioMute,          spawn,     SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+3 dwmblocks") },
-	{ 0, XF86XK_AudioRaiseVolume,   spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +10%; pkill -RTMIN+3 dwmblocks") },
-	{ 0, XF86XK_AudioLowerVolume,   spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -10%; pkill -RTMIN+3 dwmblocks") },
+	{ 0, XF86XK_AudioMute,          spawn,     SHCMD("changeVolume toggleMute; pkill -RTMIN+3 dwmblocks") },
+	{ 0, XF86XK_AudioRaiseVolume,   spawn,     SHCMD("changeVolume 10 up; pkill -RTMIN+3 dwmblocks") },
+	{ 0, XF86XK_AudioLowerVolume,   spawn,     SHCMD("changeVolume 10 down; pkill -RTMIN+3 dwmblocks") },
 	{ 0, XF86XK_AudioStop,          spawn,     SHCMD("mpc stop") },
 	{ 0, XF86XK_AudioPlay,          spawn,     SHCMD("mpc toggle") },
 	{ 0, XF86XK_AudioPrev,          spawn,     SHCMD("mpc prev") },
 	{ 0, XF86XK_AudioNext,          spawn,     SHCMD("mpc next") },
-	{ 0, XF86XK_MonBrightnessUp,    spawn,     SHCMD("xbacklight -inc 10") },
-	{ 0, XF86XK_MonBrightnessDown,  spawn,     SHCMD("xbacklight -dec 10") },
+	{ 0, XF86XK_MonBrightnessUp,    spawn,     SHCMD("changeBrightness 10 up") },
+	{ 0, XF86XK_MonBrightnessDown,  spawn,     SHCMD("changeBrightness 10 down") },
 };
 
 /* button definitions */
