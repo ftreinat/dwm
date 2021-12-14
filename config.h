@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{ "ncmpcpp",   NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "firefox",   NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "KeePassXC", NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "Evince",    NULL,       NULL,       1 << 3,       0,           -1 },
 };
 
 /* layout(s) */
@@ -137,6 +138,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,                       XK_F1,     spawn,          SHCMD("powerMenu") },
 	{ 0, XF86XK_AudioMute,          spawn,     SHCMD("changeVolume toggleMute; pkill -RTMIN+3 dwmblocks") },
 	{ 0, XF86XK_AudioRaiseVolume,   spawn,     SHCMD("changeVolume 10 up; pkill -RTMIN+3 dwmblocks") },
 	{ 0, XF86XK_AudioLowerVolume,   spawn,     SHCMD("changeVolume 10 down; pkill -RTMIN+3 dwmblocks") },
