@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -7,7 +6,11 @@ static const unsigned int gappih    = 10;       /* horiz inner gap between windo
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
+#if DESKTOP
+static int smartgaps 				= 0;
+#else
+static int smartgaps                = 1;        /* 1 means no outer gap when there is only one window */
+#endif
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack Nerd Font:size=10", "JoyPixels:size=10:antialias=true:autohint=true"};
@@ -26,7 +29,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "4", "5", "", "7", "8", "" };
+static const char *tags[] = { "", "", "", "", "5", "", "7", "8", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
