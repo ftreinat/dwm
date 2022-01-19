@@ -29,7 +29,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "5", "", "7", "8", "" };
+static const char *tags[] = { "", "", "", "", "", "6", "7", "8", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -37,10 +37,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "ncmpcpp",   NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "ncmpcpp",   NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "firefox",   NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "KeePassXC", NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "Evince",    NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Evince",    NULL,       NULL,       1 << 2,       0,           -1 },
 };
 
 /* layout(s) */
