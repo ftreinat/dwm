@@ -39,7 +39,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "ncmpcpp",   NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "firefox",   NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "KeePassXC", NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "KeePassXC", NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Evince",    NULL,       NULL,       1 << 2,       0,           -1 },
 };
 
@@ -93,6 +93,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
